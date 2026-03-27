@@ -40,7 +40,7 @@ const PricingSection = () => {
           viewport={{ once: true }}
           className="font-display text-3xl md:text-4xl font-bold text-center text-glow-sm mb-4"
         >
-          Listino <span className="text-primary">Prezzi</span>
+          <span className="text-primary">Pricing</span>
         </motion.h2>
         <motion.p
           initial={{ opacity: 0 }}
@@ -48,7 +48,7 @@ const PricingSection = () => {
           viewport={{ once: true }}
           className="text-center text-muted-foreground font-body mb-16 text-lg"
         >
-          Rocket League Edits — a partire da €5
+          Rocket League Edits — starting from €5
         </motion.p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -67,7 +67,7 @@ const PricingSection = () => {
             >
               {tier.popular && (
                 <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-primary text-primary-foreground text-xs font-display uppercase tracking-wider">
-                  Popolare
+                  Popular
                 </span>
               )}
               <h3 className="font-display text-base font-semibold mb-1">{tier.name}</h3>
@@ -93,7 +93,7 @@ const PricingSection = () => {
                     : "border border-primary/30 text-foreground hover:bg-primary/10"
                 }`}
               >
-                Ordina Ora
+                Order Now
               </a>
             </motion.div>
           ))}

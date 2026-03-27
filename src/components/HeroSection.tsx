@@ -58,10 +58,10 @@ const HeroSection = () => {
         transition={{ duration: 0.6, delay: 1.0 }}
         className="relative z-10 font-body text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed"
       >
-        VFX Artist & Video Editor specializzato in{" "}
-        <span className="text-primary font-semibold">Rocket League</span>. Creo
-        montaggi cinematografici, effetti visivi e contenuti che trasformano le
-        tue clip in qualcosa di spettacolare.
+        VFX Artist & Video Editor specializing in{" "}
+        <span className="text-primary font-semibold">Rocket League</span>. I create
+        cinematic montages, visual effects and content that turn your
+        clips into something spectacular.
       </motion.p>
 
       {/* CTA Buttons */}
@@ -75,13 +75,13 @@ const HeroSection = () => {
           href="#pricing"
           className="px-8 py-3 rounded-lg bg-primary text-primary-foreground font-body font-semibold text-base uppercase tracking-wider hover:brightness-110 transition-all duration-300 box-glow"
         >
-          Listino Prezzi
+          Pricing
         </a>
         <a
           href="#services"
           className="px-8 py-3 rounded-lg border border-primary/40 text-foreground font-body font-semibold text-base uppercase tracking-wider hover:bg-primary/10 transition-all duration-300"
         >
-          I Miei Servizi
+          My Services
         </a>
       </motion.div>
     </section>

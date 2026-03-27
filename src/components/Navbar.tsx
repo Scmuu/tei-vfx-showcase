@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 
 const navItems = [
   { label: "Home", href: "#home" },
-  { label: "Chi Sono", href: "#about" },
-  { label: "Servizi", href: "#services" },
-  { label: "Prezzi", href: "#pricing" },
-  { label: "Contatti", href: "#socials" },
+  { label: "About", href: "#about" },
+  { label: "Services", href: "#services" },
+  { label: "Pricing", href: "#pricing" },
+  { label: "Contact", href: "#socials" },
 ];
 
 const Navbar = () => {
@@ -36,7 +36,7 @@ const Navbar = () => {
         href="#socials"
         className="px-5 py-2 rounded-full bg-primary/90 text-primary-foreground font-body text-sm font-semibold uppercase tracking-wider hover:bg-primary transition-all duration-300 box-glow"
       >
-        Contattami
+        Contact Me
       </a>
     </motion.nav>
   );
