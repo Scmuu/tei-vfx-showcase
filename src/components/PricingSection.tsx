@@ -40,7 +40,7 @@ const PricingSection = () => {
           viewport={{ once: true }}
           className="font-display text-3xl md:text-4xl font-bold text-center text-glow-sm mb-4"
         >
-          Listino <span className="text-primary">Prezzi</span>
+          <span className="text-primary">Pricing</span>
         </motion.h2>
         <motion.p
           initial={{ opacity: 0 }}
@@ -48,7 +48,7 @@ const PricingSection = () => {
           viewport={{ once: true }}
           className="text-center text-muted-foreground font-body mb-16 text-lg"
         >
-          Rocket League Edits — a partire da €5
+          Rocket League Edits — starting from €5
         </motion.p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
