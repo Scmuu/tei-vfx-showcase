@@ -47,9 +47,9 @@ const CursorTrail = () => {
         p.life -= 0.02;
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size * p.life, 0, Math.PI * 2);
-        ctx.fillStyle = `hsla(270, 80%, 65%, ${p.life * 0.6})`;
+        ctx.fillStyle = `rgba(255, 255, 255, ${p.life * 0.6})`;
         ctx.shadowBlur = 8;
-        ctx.shadowColor = `hsla(270, 80%, 65%, ${p.life * 0.4})`;
+        ctx.shadowColor = `rgba(255, 80, 80, ${p.life * 0.4})`;
         ctx.fill();
       }
 
