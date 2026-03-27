@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 
 const navItems = [
   { label: "Home", href: "#home" },
-  { label: "Chi Sono", href: "#about" },
-  { label: "Servizi", href: "#services" },
-  { label: "Prezzi", href: "#pricing" },
-  { label: "Contatti", href: "#socials" },
+  { label: "About", href: "#about" },
+  { label: "Services", href: "#services" },
+  { label: "Pricing", href: "#pricing" },
+  { label: "Contact", href: "#socials" },
 ];
 
 const Navbar = () => {
