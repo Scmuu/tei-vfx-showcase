@@ -58,10 +58,10 @@ const HeroSection = () => {
         transition={{ duration: 0.6, delay: 1.0 }}
         className="relative z-10 font-body text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed"
       >
-        VFX Artist & Video Editor specializzato in{" "}
-        <span className="text-primary font-semibold">Rocket League</span>. Creo
-        montaggi cinematografici, effetti visivi e contenuti che trasformano le
-        tue clip in qualcosa di spettacolare.
+        VFX Artist & Video Editor specializing in{" "}
+        <span className="text-primary font-semibold">Rocket League</span>. I create
+        cinematic montages, visual effects and content that turn your
+        clips into something spectacular.
       </motion.p>
 
       {/* CTA Buttons */}
