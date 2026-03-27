@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import centipedeImg from "@/assets/centipede.png";
 
 const HeroSection = () => {
   return (
@@ -7,29 +6,16 @@ const HeroSection = () => {
       id="home"
       className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 overflow-hidden"
     >
-      {/* Centipede background image */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <motion.img
-          src={centipedeImg}
-          alt=""
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 0.06, scale: 1 }}
-          transition={{ duration: 2, ease: "easeOut" }}
-          className="max-w-[700px] w-full h-auto select-none"
-          style={{ filter: "grayscale(30%) contrast(1.2)" }}
-        />
-      </div>
-
-      {/* Orbital rings - blood red */}
+      {/* Orbital rings */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <div className="w-[600px] h-[400px] border border-primary/10 rounded-full animate-orbit" />
         <div className="absolute w-[800px] h-[500px] border border-primary/5 rounded-full animate-orbit" style={{ animationDuration: "45s", animationDirection: "reverse" }} />
       </div>
 
-      {/* Red glow blob */}
+      {/* Glow blob */}
       <div className="absolute w-[500px] h-[500px] rounded-full bg-primary/8 blur-[120px] animate-pulse-glow pointer-events-none" />
 
-      {/* Profile picture */}
+      {/* Profile picture placeholder */}
       <motion.div
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
