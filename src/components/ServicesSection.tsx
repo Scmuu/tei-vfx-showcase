@@ -3,22 +3,22 @@ import { motion } from "framer-motion";
 const services = [
   {
     title: "Video Editing",
-    desc: "Montaggi professionali con tagli precisi, sincronizzazione musicale e transizioni fluide per le tue clip migliori.",
+    desc: "Professional edits with precise cuts, music sync and smooth transitions for your best clips.",
     icon: "🎬",
   },
   {
     title: "VFX & Motion Graphics",
-    desc: "Effetti visivi avanzati, particle effects e motion graphics che rendono ogni clip unica e cinematografica.",
+    desc: "Advanced visual effects, particle effects and motion graphics that make every clip unique and cinematic.",
     icon: "✨",
   },
   {
     title: "Color Correction",
-    desc: "Color grading professionale per dare alle tue clip l'atmosfera e il look perfetto.",
+    desc: "Professional color grading to give your clips the perfect atmosphere and look.",
     icon: "🎨",
   },
   {
     title: "Quality Enhancements",
-    desc: "Miglioramenti di qualità, upscaling e ottimizzazione per un risultato visivamente impeccabile.",
+    desc: "Quality improvements, upscaling and optimization for a visually flawless result.",
     icon: "💎",
   },
 ];
