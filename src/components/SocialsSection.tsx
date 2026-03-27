@@ -16,13 +16,13 @@ const socials = [
   {
     name: "TikTok",
     icon: <TikTokIcon />,
-    link: "https://tiktok.com/@tuolink",
+    link: "https://tiktok.com/@tei_7oo?is_from_webapp=1&sender_device=pc",
     desc: "Seguimi per clip e highlights",
   },
   {
     name: "Discord",
     icon: <DiscordIcon />,
-    link: "https://discord.gg/tuolink",
+    link: "https://discord.gg/2ma6rC7kPt",
     desc: "Unisciti al server per ordinare",
   },
 ];
