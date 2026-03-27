@@ -37,7 +37,7 @@ const SocialsSection = () => {
           viewport={{ once: true }}
           className="font-display text-3xl md:text-4xl font-bold text-glow-sm mb-4"
         >
-          I Miei <span className="text-primary">Social</span>
+          My <span className="text-primary">Socials</span>
         </motion.h2>
         <motion.p
           initial={{ opacity: 0 }}
@@ -45,7 +45,7 @@ const SocialsSection = () => {
           viewport={{ once: true }}
           className="text-muted-foreground font-body mb-12 text-lg"
         >
-          Seguimi e contattami per qualsiasi richiesta
+          Follow me and reach out for any request
         </motion.p>
 
         <div className="flex flex-col sm:flex-row gap-6 justify-center">

@@ -93,7 +93,7 @@ const PricingSection = () => {
                     : "border border-primary/30 text-foreground hover:bg-primary/10"
                 }`}
               >
-                Ordina Ora
+                Order Now
               </a>
             </motion.div>
           ))}

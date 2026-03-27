@@ -33,7 +33,7 @@ const ServicesSection = () => {
           viewport={{ once: true }}
           className="font-display text-3xl md:text-4xl font-bold text-center text-glow-sm mb-16"
         >
-          Cosa <span className="text-primary">Offro</span>
+          What I <span className="text-primary">Offer</span>
         </motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

@@ -36,7 +36,7 @@ const Navbar = () => {
         href="#socials"
         className="px-5 py-2 rounded-full bg-primary/90 text-primary-foreground font-body text-sm font-semibold uppercase tracking-wider hover:bg-primary transition-all duration-300 box-glow"
       >
-        Contattami
+        Contact Me
       </a>
     </motion.nav>
   );
