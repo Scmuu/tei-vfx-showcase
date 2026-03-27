@@ -67,7 +67,7 @@ const PricingSection = () => {
             >
               {tier.popular && (
                 <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-primary text-primary-foreground text-xs font-display uppercase tracking-wider">
-                  Popolare
+                  Popular
                 </span>
               )}
               <h3 className="font-display text-base font-semibold mb-1">{tier.name}</h3>
