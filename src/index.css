@@ -6,47 +6,47 @@
 
 @layer base {
   :root {
-    --background: 0 0% 3%;
-    --foreground: 0 0% 95%;
+    --background: 0 0% 2%;
+    --foreground: 0 0% 88%;
 
-    --card: 0 0% 7%;
-    --card-foreground: 0 0% 95%;
+    --card: 0 0% 5%;
+    --card-foreground: 0 0% 88%;
 
-    --popover: 0 0% 7%;
-    --popover-foreground: 0 0% 95%;
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 88%;
 
-    --primary: 0 75% 55%;
+    --primary: 0 72% 45%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 10%;
-    --secondary-foreground: 0 0% 90%;
+    --secondary: 0 0% 8%;
+    --secondary-foreground: 0 0% 80%;
 
-    --muted: 0 0% 12%;
-    --muted-foreground: 0 0% 50%;
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 5% 45%;
 
-    --accent: 0 80% 50%;
+    --accent: 0 85% 40%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 0 0% 15%;
-    --input: 0 0% 15%;
-    --ring: 0 75% 55%;
+    --border: 0 10% 12%;
+    --input: 0 10% 12%;
+    --ring: 0 72% 45%;
 
     --radius: 0.75rem;
 
-    --glow-primary: 0 0% 100%;
-    --glow-accent: 0 75% 55%;
+    --glow-primary: 0 72% 50%;
+    --glow-accent: 0 85% 40%;
 
-    --sidebar-background: 0 0% 5%;
-    --sidebar-foreground: 0 0% 90%;
-    --sidebar-primary: 0 75% 55%;
+    --sidebar-background: 0 0% 3%;
+    --sidebar-foreground: 0 0% 80%;
+    --sidebar-primary: 0 72% 45%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 0 0% 10%;
-    --sidebar-accent-foreground: 0 0% 90%;
-    --sidebar-border: 0 0% 15%;
-    --sidebar-ring: 0 75% 55%;
+    --sidebar-accent: 0 0% 8%;
+    --sidebar-accent-foreground: 0 0% 80%;
+    --sidebar-border: 0 10% 12%;
+    --sidebar-ring: 0 72% 45%;
   }
 }
 
@@ -71,27 +71,27 @@
 
   .text-glow {
     text-shadow:
-      0 0 20px hsl(var(--glow-primary) / 0.6),
-      0 0 40px hsl(var(--glow-primary) / 0.3),
-      0 0 80px hsl(var(--glow-primary) / 0.15);
+      0 0 20px hsl(var(--glow-primary) / 0.7),
+      0 0 40px hsl(var(--glow-primary) / 0.4),
+      0 0 80px hsl(var(--glow-primary) / 0.2);
   }
 
   .text-glow-sm {
     text-shadow:
-      0 0 10px hsl(var(--glow-primary) / 0.5),
-      0 0 20px hsl(var(--glow-primary) / 0.2);
+      0 0 10px hsl(var(--glow-primary) / 0.6),
+      0 0 20px hsl(var(--glow-primary) / 0.25);
   }
 
   .box-glow {
     box-shadow:
-      0 0 15px hsl(var(--glow-primary) / 0.3),
+      0 0 15px hsl(var(--glow-primary) / 0.35),
       0 0 30px hsl(var(--glow-primary) / 0.15),
       inset 0 0 15px hsl(var(--glow-primary) / 0.05);
   }
 
   .box-glow-accent {
     box-shadow:
-      0 0 15px hsl(var(--glow-accent) / 0.3),
+      0 0 15px hsl(var(--glow-accent) / 0.35),
       0 0 30px hsl(var(--glow-accent) / 0.15);
   }
 }

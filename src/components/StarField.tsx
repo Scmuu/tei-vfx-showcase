@@ -17,7 +17,7 @@ const StarField = () => {
     resize();
     window.addEventListener("resize", resize);
 
-    const stars: { x: number; y: number; r: number; speed: number; opacity: number; phase: number }[] = [];
+    const stars: { x: number; y: number; r: number; speed: number; opacity: number; phase: number; isRed: boolean }[] = [];
     for (let i = 0; i < 200; i++) {
       stars.push({
         x: Math.random() * canvas.width,
@@ -26,6 +26,7 @@ const StarField = () => {
         speed: Math.random() * 0.3 + 0.05,
         opacity: Math.random(),
         phase: Math.random() * Math.PI * 2,
+        isRed: Math.random() < 0.25,
       });
     }
 
@@ -37,7 +38,11 @@ const StarField = () => {
         const twinkle = Math.sin(time * 0.001 * star.speed + star.phase) * 0.5 + 0.5;
         ctx.beginPath();
         ctx.arc(star.x, star.y, star.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255, 255, 255, ${twinkle * 0.7})`;
+        if (star.isRed) {
+          ctx.fillStyle = `rgba(180, 40, 40, ${twinkle * 0.6})`;
+        } else {
+          ctx.fillStyle = `rgba(200, 190, 190, ${twinkle * 0.5})`;
+        }
         ctx.fill();
       });
 
