@@ -1,1 +1,1 @@
-# Tei Website, ( vibe coding )
+# This is a Website for a friend, ( --> vibe coding <-- )
