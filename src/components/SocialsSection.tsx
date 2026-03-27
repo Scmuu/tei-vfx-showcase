@@ -17,13 +17,13 @@ const socials = [
     name: "TikTok",
     icon: <TikTokIcon />,
     link: "https://tiktok.com/@tei_7oo?is_from_webapp=1&sender_device=pc",
-    desc: "Seguimi per clip e highlights",
+    desc: "Follow me for clips and highlights",
   },
   {
     name: "Discord",
     icon: <DiscordIcon />,
     link: "https://discord.gg/2ma6rC7kPt",
-    desc: "Unisciti al server per ordinare",
+    desc: "Join the server to order",
   },
 ];
 
