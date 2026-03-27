@@ -1,1 +1,1 @@
-# Tei Website, trying vibe codding
+# Tei Website, ( vibe coding )
