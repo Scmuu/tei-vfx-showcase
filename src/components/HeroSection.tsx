@@ -22,8 +22,12 @@ const HeroSection = () => {
         transition={{ duration: 0.6, delay: 0.2 }}
         className="relative z-10 mb-6"
       >
-        <div className="w-24 h-24 rounded-full border-2 border-primary/50 bg-secondary flex items-center justify-center box-glow overflow-hidden">
-          <span className="text-muted-foreground text-xs font-body uppercase tracking-wider">PFP</span>
+        <div className="w-36 h-36 md:w-44 md:h-44 rounded-full border-2 border-primary/50 bg-secondary flex items-center justify-center box-glow overflow-hidden">
+          <img
+            src="https://p16-common-sign.tiktokcdn-eu.com/tos-no1a-avt-0068c001-no/06320e5ca5b0da184b9cb179e60a81a2~tplv-tiktokx-cropcenter:1080:1080.jpeg?dr=10399&refresh_token=aa8cec8c&x-expires=1774782000&x-signature=tOp41T%2BblBXKdfaIU58b53Y%2FjHE%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=no1a"
+            alt="TEI Profile"
+            className="w-full h-full object-cover"
+          />
         </div>
       </motion.div>
 
