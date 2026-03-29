@@ -16,7 +16,7 @@ const Index = () => {
       <img
         src={centipedeImg}
         alt=""
-        className="fixed right-0 top-0 h-full w-auto object-cover pointer-events-none z-[5] opacity-30"
+        className="fixed right-0 top-0 h-full w-auto object-cover pointer-events-none z-[5] opacity-100"
         style={{ maxWidth: "350px" }}
       />
 
