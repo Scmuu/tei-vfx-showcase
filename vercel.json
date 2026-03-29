@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    {"source": "/pfp.jpeg", "destination": "/pfp.jpeg"},
+    {"source": "/(.*)", "destination": "/index.html"}
+  ]
+}
