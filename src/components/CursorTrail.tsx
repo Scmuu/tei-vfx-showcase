@@ -1,22 +1,7 @@
-import { useEffect, useRef, useCallback } from "react";
+import { useEffect, useRef } from "react";
 
 const CursorTrail = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const particlesRef = useRef<{ x: number; y: number; vx: number; vy: number; life: number; size: number }[]>([]);
-  const animationRef = useRef<number>(0);
-
-  const handleMouseMove = useCallback((e: MouseEvent) => {
-    for (let i = 0; i < 2; i++) {
-      particlesRef.current.push({
-        x: e.clientX,
-        y: e.clientY,
-        vx: (Math.random() - 0.5) * 1.5,
-        vy: (Math.random() - 0.5) * 1.5,
-        life: 1,
-        size: Math.random() * 2.5 + 1,
-      });
-    }
-  }, []);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -25,49 +10,68 @@ const CursorTrail = () => {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
+    const particles: { x: number; y: number; vx: number; vy: number; life: number; size: number }[] = [];
+    let running = true;
+
     const resize = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
     };
     resize();
 
+    const onMouseMove = (e: MouseEvent) => {
+      for (let i = 0; i < 2; i++) {
+        particles.push({
+          x: e.clientX,
+          y: e.clientY,
+          vx: (Math.random() - 0.5) * 1.5,
+          vy: (Math.random() - 0.5) * 1.5,
+          life: 1,
+          size: Math.random() * 2.5 + 1,
+        });
+      }
+      // cap
+      if (particles.length > 400) particles.splice(0, particles.length - 400);
+    };
+
     window.addEventListener("resize", resize);
-    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("mousemove", onMouseMove);
 
     const animate = () => {
+      if (!running) return;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      const particles = particlesRef.current;
-      particlesRef.current = particles.filter((p) => p.life > 0);
-      
-      for (const p of particlesRef.current) {
+      let i = particles.length;
+      while (i--) {
+        const p = particles[i];
         p.x += p.vx;
         p.y += p.vy;
         p.life -= 0.02;
+        if (p.life <= 0) {
+          particles.splice(i, 1);
+          continue;
+        }
         ctx.save();
+        ctx.globalAlpha = p.life * 0.7;
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size * p.life, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255, 80, 80, ${p.life * 0.7})`;
-        ctx.shadowBlur = 12;
-        ctx.shadowColor = `rgba(255, 50, 50, ${p.life * 0.5})`;
+        ctx.fillStyle = "rgb(220, 50, 50)";
+        ctx.shadowBlur = 14;
+        ctx.shadowColor = "rgba(255, 40, 40, 0.6)";
         ctx.fill();
         ctx.restore();
       }
 
-      if (particlesRef.current.length > 500) {
-        particlesRef.current = particlesRef.current.slice(-500);
-      }
-
-      animationRef.current = requestAnimationFrame(animate);
+      requestAnimationFrame(animate);
     };
-    animationRef.current = requestAnimationFrame(animate);
+    requestAnimationFrame(animate);
 
     return () => {
+      running = false;
       window.removeEventListener("resize", resize);
-      window.removeEventListener("mousemove", handleMouseMove);
-      cancelAnimationFrame(animationRef.current);
+      window.removeEventListener("mousemove", onMouseMove);
     };
-  }, [handleMouseMove]);
+  }, []);
 
   return (
     <canvas
