@@ -10,57 +10,66 @@ const CursorTrail = () => {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    let particles: { x: number; y: number; vx: number; vy: number; life: number; size: number }[] = [];
-    let mouse = { x: 0, y: 0 };
-    let animationId: number;
+    const particles: { x: number; y: number; vx: number; vy: number; life: number; size: number }[] = [];
+    let running = true;
 
     const resize = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
     };
     resize();
-    window.addEventListener("resize", resize);
 
     const onMouseMove = (e: MouseEvent) => {
-      mouse.x = e.clientX;
-      mouse.y = e.clientY;
       for (let i = 0; i < 2; i++) {
         particles.push({
-          x: mouse.x,
-          y: mouse.y,
+          x: e.clientX,
+          y: e.clientY,
           vx: (Math.random() - 0.5) * 1.5,
           vy: (Math.random() - 0.5) * 1.5,
           life: 1,
           size: Math.random() * 2.5 + 1,
         });
       }
+      // cap
+      if (particles.length > 400) particles.splice(0, particles.length - 400);
     };
+
+    window.addEventListener("resize", resize);
     window.addEventListener("mousemove", onMouseMove);
 
     const animate = () => {
+      if (!running) return;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      particles = particles.filter((p) => p.life > 0);
-      for (const p of particles) {
+      let i = particles.length;
+      while (i--) {
+        const p = particles[i];
         p.x += p.vx;
         p.y += p.vy;
         p.life -= 0.02;
+        if (p.life <= 0) {
+          particles.splice(i, 1);
+          continue;
+        }
+        ctx.save();
+        ctx.globalAlpha = p.life * 0.7;
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size * p.life, 0, Math.PI * 2);
-        ctx.fillStyle = `hsla(270, 80%, 65%, ${p.life * 0.6})`;
-        ctx.shadowBlur = 8;
-        ctx.shadowColor = `hsla(270, 80%, 65%, ${p.life * 0.4})`;
+        ctx.fillStyle = "rgb(220, 50, 50)";
+        ctx.shadowBlur = 14;
+        ctx.shadowColor = "rgba(255, 40, 40, 0.6)";
         ctx.fill();
+        ctx.restore();
       }
 
-      animationId = requestAnimationFrame(animate);
+      requestAnimationFrame(animate);
     };
-    animate();
+    requestAnimationFrame(animate);
 
     return () => {
+      running = false;
       window.removeEventListener("resize", resize);
       window.removeEventListener("mousemove", onMouseMove);
-      cancelAnimationFrame(animationId);
     };
   }, []);
 

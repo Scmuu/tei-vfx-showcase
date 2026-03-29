@@ -37,7 +37,7 @@ const StarField = () => {
         const twinkle = Math.sin(time * 0.001 * star.speed + star.phase) * 0.5 + 0.5;
         ctx.beginPath();
         ctx.arc(star.x, star.y, star.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(200, 180, 255, ${twinkle * 0.8})`;
+        ctx.fillStyle = `rgba(255, 255, 255, ${twinkle * 0.7})`;
         ctx.fill();
       });
 
