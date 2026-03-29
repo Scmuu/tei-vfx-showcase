@@ -11,7 +11,6 @@ const CursorTrail = () => {
     if (!ctx) return;
 
     let particles: { x: number; y: number; vx: number; vy: number; life: number; size: number }[] = [];
-    let mouse = { x: 0, y: 0 };
     let animationId: number;
 
     const resize = () => {
@@ -22,12 +21,10 @@ const CursorTrail = () => {
     window.addEventListener("resize", resize);
 
     const onMouseMove = (e: MouseEvent) => {
-      mouse.x = e.clientX;
-      mouse.y = e.clientY;
       for (let i = 0; i < 2; i++) {
         particles.push({
-          x: mouse.x,
-          y: mouse.y,
+          x: e.clientX,
+          y: e.clientY,
           vx: (Math.random() - 0.5) * 1.5,
           vy: (Math.random() - 0.5) * 1.5,
           life: 1,
@@ -47,10 +44,15 @@ const CursorTrail = () => {
         p.life -= 0.02;
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size * p.life, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255, 255, 255, ${p.life * 0.6})`;
-        ctx.shadowBlur = 8;
-        ctx.shadowColor = `rgba(255, 80, 80, ${p.life * 0.4})`;
+        ctx.fillStyle = `rgba(255, 80, 80, ${p.life * 0.7})`;
+        ctx.shadowBlur = 12;
+        ctx.shadowColor = `rgba(255, 50, 50, ${p.life * 0.5})`;
         ctx.fill();
+      }
+
+      // Cap particles to prevent memory issues
+      if (particles.length > 500) {
+        particles = particles.slice(-500);
       }
 
       animationId = requestAnimationFrame(animate);
