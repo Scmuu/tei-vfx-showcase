@@ -94,4 +94,14 @@
       0 0 15px hsl(var(--glow-accent) / 0.3),
       0 0 30px hsl(var(--glow-accent) / 0.15);
   }
+
+}
+/* Nascondi Lovable embed/badge */
+[class*="lovable"],
+.lovable-embed,
+.lovable-badge,
+[lovable],
+iframe[src*="lovable.dev"],
+img[src*="lovable.dev"] {
+  display: none !important;
 }
