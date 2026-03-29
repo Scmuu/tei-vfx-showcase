@@ -1,7 +1,22 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useCallback } from "react";
 
 const CursorTrail = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const particlesRef = useRef<{ x: number; y: number; vx: number; vy: number; life: number; size: number }[]>([]);
+  const animationRef = useRef<number>(0);
+
+  const handleMouseMove = useCallback((e: MouseEvent) => {
+    for (let i = 0; i < 2; i++) {
+      particlesRef.current.push({
+        x: e.clientX,
+        y: e.clientY,
+        vx: (Math.random() - 0.5) * 1.5,
+        vy: (Math.random() - 0.5) * 1.5,
+        life: 1,
+        size: Math.random() * 2.5 + 1,
+      });
+    }
+  }, []);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -10,61 +25,49 @@ const CursorTrail = () => {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    let particles: { x: number; y: number; vx: number; vy: number; life: number; size: number }[] = [];
-    let animationId: number;
-
     const resize = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
     };
     resize();
-    window.addEventListener("resize", resize);
 
-    const onMouseMove = (e: MouseEvent) => {
-      for (let i = 0; i < 2; i++) {
-        particles.push({
-          x: e.clientX,
-          y: e.clientY,
-          vx: (Math.random() - 0.5) * 1.5,
-          vy: (Math.random() - 0.5) * 1.5,
-          life: 1,
-          size: Math.random() * 2.5 + 1,
-        });
-      }
-    };
-    window.addEventListener("mousemove", onMouseMove);
+    window.addEventListener("resize", resize);
+    window.addEventListener("mousemove", handleMouseMove);
 
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      particles = particles.filter((p) => p.life > 0);
-      for (const p of particles) {
+      const particles = particlesRef.current;
+      particlesRef.current = particles.filter((p) => p.life > 0);
+      
+      for (const p of particlesRef.current) {
         p.x += p.vx;
         p.y += p.vy;
         p.life -= 0.02;
+        ctx.save();
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size * p.life, 0, Math.PI * 2);
         ctx.fillStyle = `rgba(255, 80, 80, ${p.life * 0.7})`;
         ctx.shadowBlur = 12;
         ctx.shadowColor = `rgba(255, 50, 50, ${p.life * 0.5})`;
         ctx.fill();
+        ctx.restore();
       }
 
-      // Cap particles to prevent memory issues
-      if (particles.length > 500) {
-        particles = particles.slice(-500);
+      if (particlesRef.current.length > 500) {
+        particlesRef.current = particlesRef.current.slice(-500);
       }
 
-      animationId = requestAnimationFrame(animate);
+      animationRef.current = requestAnimationFrame(animate);
     };
-    animate();
+    animationRef.current = requestAnimationFrame(animate);
 
     return () => {
       window.removeEventListener("resize", resize);
-      window.removeEventListener("mousemove", onMouseMove);
-      cancelAnimationFrame(animationId);
+      window.removeEventListener("mousemove", handleMouseMove);
+      cancelAnimationFrame(animationRef.current);
     };
-  }, []);
+  }, [handleMouseMove]);
 
   return (
     <canvas
