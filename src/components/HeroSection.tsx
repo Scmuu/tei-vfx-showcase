@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import pfp from '../../assets/pfp.jpeg';
 
 const HeroSection = () => {
   return (
@@ -24,7 +25,7 @@ const HeroSection = () => {
       >
         <div className="w-36 h-36 md:w-44 md:h-44 rounded-full border-2 border-primary/50 bg-secondary flex items-center justify-center box-glow overflow-hidden">
           <img
-            src="/pfp.png"
+            src={pfp}
             alt="TEI Profile"
             className="w-full h-full object-cover"
           />
