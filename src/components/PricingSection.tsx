@@ -5,15 +5,13 @@ const pricingTiers = [
     name: "Video (TikTok)",
     price: "€5 – €10",
     subtitle: "Edited TikTok videos",
-    features: ["Cutting & sync", "Transitions", "Music sync", "Ready to post"],
-    popular: true,
+    features: ["Color correction", "Transitions", "Music sync", "High quality"],
   },
   {
     name: "Steam Artwork",
     price: "€15",
     subtitle: "Custom Steam Artwork",
     features: ["Custom design", "High quality render", "Personalized style"],
-    popular: false,
   },
 ];
 
@@ -46,17 +44,8 @@ const PricingSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.12 }}
-              className={`relative flex flex-col p-8 rounded-xl border backdrop-blur-sm transition-all duration-500 ${
-                tier.popular
-                  ? "border-primary/60 bg-primary/10 box-glow"
-                  : "border-border/40 bg-card/60 hover:border-primary/30"
-              }`}
+              className="relative flex flex-col p-8 rounded-xl border border-border/40 bg-card/60 backdrop-blur-sm hover:border-primary/30 transition-all duration-500"
             >
-              {tier.popular && (
-                <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-primary text-primary-foreground text-xs font-display uppercase tracking-wider">
-                  Popular
-                </span>
-              )}
               <h3 className="font-display text-xl font-semibold mb-1">{tier.name}</h3>
               {tier.subtitle && (
                 <p className="text-xs text-muted-foreground font-body mb-3">{tier.subtitle}</p>
@@ -76,11 +65,7 @@ const PricingSection = () => {
                 href="https://discord.gg/2ma6rC7kPt"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`text-center py-2.5 rounded-lg font-body text-sm font-semibold uppercase tracking-wider transition-all duration-300 ${
-                  tier.popular
-                    ? "bg-primary text-primary-foreground hover:brightness-110"
-                    : "border border-primary/30 text-foreground hover:bg-primary/10"
-                }`}
+                className="text-center py-2.5 rounded-lg font-body text-sm font-semibold uppercase tracking-wider border border-primary/30 text-foreground hover:bg-primary/10 transition-all duration-300"
               >
                 Order Now
               </a>
