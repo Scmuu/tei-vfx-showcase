@@ -32,7 +32,7 @@ const Navbar = () => {
       </div>
 
       <a
-        href="https://discord.gg/2ma6rC7kPt"
+        href="https://discord.com/users/1251662595039953036"
         target="_blank"
         rel="noopener noreferrer"
         className="px-5 py-2 rounded-full bg-primary/90 text-primary-foreground font-body text-sm font-semibold uppercase tracking-wider hover:bg-primary transition-all duration-300 box-glow"
