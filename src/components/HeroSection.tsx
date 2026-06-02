@@ -53,18 +53,16 @@ const HeroSection = () => {
       />
 
       {/* Description */}
-      <motion.p
-        initial={{ y: 20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6, delay: 1.0 }}
-        className="relative z-10 font-body text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed"
-      >
-        VFX Artist & Video Editor specializing in{" "}
-        <span className="text-primary font-semibold">Rocket League</span>. I create
-        cinematic montages, visual effects and content that turn your
-        clips into something spectacular.
-      </motion.p>
-
+    <motion.p
+  initial={{ y: 20, opacity: 0 }}
+  animate={{ y: 0, opacity: 1 }}
+  transition={{ duration: 0.6, delay: 1.0 }}
+  className="relative z-10 font-body text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed"
+>
+  VFX / SMM & Video Editor specializing in{" "}
+  <span className="text-primary font-semibold">Rocket League</span>. 
+  Lead SMM for Kurai & StarCore.
+</motion.p>
       {/* CTA Buttons */}
       <motion.div
         initial={{ y: 20, opacity: 0 }}
