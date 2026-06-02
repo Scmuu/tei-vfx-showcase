@@ -59,10 +59,11 @@ const HeroSection = () => {
   transition={{ duration: 0.6, delay: 1.0 }}
   className="relative z-10 font-body text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed"
 >
-  VFX / SMM & Video Editor specializing in{" "}
+  <span className="font-semibold">VFX / SMM</span> & Video Editor specializing in{" "}
   <span className="text-primary font-semibold">Rocket League</span>.
   <br />
-  Lead SMM for <span className="font-semibold text-foreground">Kurai & StarCore</span>.
+  <span className="font-semibold">Lead SMM</span> for{" "}
+  <span className="font-semibold italic">Kurai & StarCore</span>.
 </motion.p>
       {/* CTA Buttons */}
       <motion.div
