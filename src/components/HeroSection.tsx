@@ -39,9 +39,9 @@ const HeroSection = () => {
         transition={{ duration: 0.8, delay: 0.4 }}
         className="relative z-10 font-display text-7xl md:text-9xl font-black tracking-wider text-glow"
       >
-        <span className="text-primary">T</span>
-        <span className="text-primary">E</span>
-        <span className="text-primary">I</span>
+        <span className="text-white">T</span>
+        <span className="text-white">E</span>
+        <span className="text-white">I</span>
       </motion.h1>
 
       {/* Divider */}
