@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import pfp from '../assets/pfp.jpeg';
+import pfp from '../assets/pfp.jpg';
 
 const HeroSection = () => {
   return (
