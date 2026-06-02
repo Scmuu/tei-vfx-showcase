@@ -60,8 +60,9 @@ const HeroSection = () => {
   className="relative z-10 font-body text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed"
 >
   VFX / SMM & Video Editor specializing in{" "}
-  <span className="text-primary font-semibold">Rocket League</span>. 
-  Lead SMM for Kurai & StarCore.
+  <span className="text-primary font-semibold">Rocket League</span>.
+  <br />
+  Lead SMM for <span className="font-semibold text-foreground">Kurai & StarCore</span>.
 </motion.p>
       {/* CTA Buttons */}
       <motion.div
