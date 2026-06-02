@@ -55,9 +55,9 @@ const CursorTrail = () => {
         ctx.globalAlpha = p.life * 0.7;
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size * p.life, 0, Math.PI * 2);
-        ctx.fillStyle = "rgb(220, 50, 50)";
+        ctx.fillStyle = "rgb(0, 220, 255)";
         ctx.shadowBlur = 14;
-        ctx.shadowColor = "rgba(255, 40, 40, 0.6)";
+        ctx.shadowColor = "rgba(0, 220, 255, 0.6)";
         ctx.fill();
         ctx.restore();
       }
