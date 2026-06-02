@@ -1,8 +1,66 @@
 import { motion } from "framer-motion";
 
 // Add your links here later
-const steamArtworks: { title: string; link: string }[] = [];
-const tiktokVideos: { title: string; link: string }[] = [];
+const steamArtworks: { title: string; link: string }[] = [
+  {
+    title: "Shiiya SteamArtwork",
+    link: "https://steamcommunity.com/profiles/76561198323604528",
+  },
+   {
+    title: "Pkchuz SteamArtwork",
+    link: "https://steamcommunity.com/id/pkchuzrll",
+  },
+   {
+    title: "Samu SteamArtwork",
+    link: "https://steamcommunity.com/id/vSamu",
+  },
+   {
+    title: "Aksith SteamArtwork",
+    link: "https://steamcommunity.com/profiles/76561198340708093",
+  },
+  {
+    title: "Tei SteamArtwork",
+    link: "https://steamcommunity.com/id/teiiii_/",
+  },
+];
+const tiktokVideos: { title: string; link: string }[] = [
+  {
+    title: "Team Raiko Video",
+    link: "https://www.tiktok.com/@team_raiko/video/7645291823958740257?is_from_webapp=1&sender_device=pc",
+  },
+  {
+    title: "Team Kurai Video",
+    link: "https://www.tiktok.com/@team_kurai/video/7634166471358352663?is_from_webapp=1&sender_device=pc",
+  },
+   {
+    title: "Team Exyr Video",
+    link: "https://www.tiktok.com/@team_exyr/video/7615323788502191382?is_from_webapp=1&sender_device=pc",
+  },
+  {
+  title: "Zoft Video 1",
+  link: "https://www.tiktok.com/@zoftrl/video/7643815609632902421?is_from_webapp=1&sender_device=pc",
+},
+{
+  title: "Zoft Video 2",
+  link: "https://www.tiktok.com/@zoftrl/video/7584890754129022228?is_from_webapp=1&sender_device=pc",
+},
+{
+  title: "Dip Video",
+  link: "https://www.tiktok.com/@il_dip/video/7631189991858752790?is_from_webapp=1&sender_device=pc",
+},
+{
+  title: "Freezie Video 1",
+  link: "https://www.tiktok.com/@freezie.rl/video/7620067259892911382?is_from_webapp=1&sender_device=pc",
+},
+{
+  title: "Freezie Video 2",
+  link: "https://www.tiktok.com/@freezie.rl/video/7615747326262529302?is_from_webapp=1&sender_device=pc",
+},
+{
+  title: "Kikko Video",
+  link: "https://www.tiktok.com/@kikkorl34/video/7613152506335546646?is_from_webapp=1&sender_device=pc",
+},
+];
 
 const Placeholder = ({ label }: { label: string }) => (
   <div className="rounded-lg border border-dashed border-border/50 bg-card/40 p-6 text-center font-body text-sm text-muted-foreground">
