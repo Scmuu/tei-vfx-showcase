@@ -65,15 +65,15 @@ const tiktokVideos: { title: string; link: string }[] = [
   link: "https://www.tiktok.com/@kikkorl34/video/7613152506335546646?is_from_webapp=1&sender_device=pc",
 },
 {
-  title: "TikTok Video 1",
+  title: "Team Raiko Video 2",
   link: "https://vm.tiktok.com/ZNRcsnX1x/",
 },
 {
-  title: "TikTok Video 2",
+  title: "Freezie Video 3",
   link: "https://vm.tiktok.com/ZNRcG1FT7/",
 },
 {
-  title: "TikTok Video 3",
+  title: "Dip Video 2",
   link: "https://vm.tiktok.com/ZNRcso7FU/",
 },
 ];
