@@ -26,6 +26,10 @@ const steamArtworks: { title: string; link: string }[] = [
     title: "D1vi SteamArtwork",
     link: "https://steamcommunity.com/id/d1vii",
   },
+  {
+    title: "Tei 2 SteamArtwork",
+    link: "https://steamcommunity.com/id/Tei_rl/",
+  },
 ];
 const tiktokVideos: { title: string; link: string }[] = [
   {
