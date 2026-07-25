@@ -62,8 +62,9 @@ const HeroSection = () => {
   <span className="font-semibold">VFX / SMM</span> & Video Editor specializing in{" "}
   <span className="text-primary font-semibold">Rocket League</span>.
   <br />
-  <span className="font-semibold">Lead SMM</span> for{" "}
-  <span className="font-semibold italic">Kurai & StarCore</span>.
+  <span className="font-semibold">SMM Lead</span> for{" "}
+  <span className="font-semibold italic">Kurai</span> & SMM for{" "}
+  <span className="font-semibold italic">Freez</span>.
 </motion.p>
       {/* CTA Buttons */}
       <motion.div
