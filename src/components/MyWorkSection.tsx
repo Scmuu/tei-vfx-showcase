@@ -7,16 +7,8 @@ const steamArtworks: { title: string; link: string }[] = [
     link: "https://steamcommunity.com/profiles/76561198323604528",
   },
    {
-    title: "Pkchuz SteamArtwork",
-    link: "https://steamcommunity.com/id/pkchuzrll",
-  },
-   {
     title: "Samu SteamArtwork",
     link: "https://steamcommunity.com/id/vSamu",
-  },
-   {
-    title: "Aksith SteamArtwork",
-    link: "https://steamcommunity.com/profiles/76561198340708093",
   },
   {
     title: "Tei SteamArtwork",
@@ -32,10 +24,6 @@ const steamArtworks: { title: string; link: string }[] = [
   },
 ];
 const tiktokVideos: { title: string; link: string }[] = [
-  {
-    title: "Team Raiko Video",
-    link: "https://www.tiktok.com/@team_raiko/video/7645291823958740257?is_from_webapp=1&sender_device=pc",
-  },
   {
     title: "Team Kurai Video",
     link: "https://www.tiktok.com/@team_kurai/video/7634166471358352663?is_from_webapp=1&sender_device=pc",
@@ -79,6 +67,10 @@ const tiktokVideos: { title: string; link: string }[] = [
 {
   title: "Dip Video 2",
   link: "https://vm.tiktok.com/ZNRcso7FU/",
+},
+{
+  title: "Team Freez Video",
+  link: "https://www.tiktok.com/@teamfreezrl/video/7665757401210965270?is_from_webapp=1&sender_device=pc",
 },
 ];
 
