@@ -26,7 +26,7 @@ const Index = () => {
           transition={{ duration: 0.7 }}
           className="flex max-w-3xl flex-col items-center"
         >
-          <h1 className="font-display text-7xl text-foreground text-glow sm:text-8xl md:text-9xl">TEI</h1>
+          <h1 className="font-display text-7xl font-normal text-foreground sm:text-8xl md:text-9xl">TEI</h1>
           <p className="mt-5 max-w-2xl font-body text-lg font-medium leading-relaxed text-foreground/85 md:text-xl">
             VFX / SMM &amp; Video Editor specializing in <span className="text-primary">Rocket League</span>.
             <br />SMM Lead for Kurai &amp; SMM for Freez.

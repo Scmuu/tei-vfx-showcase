@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import TiltCard from "@/components/TiltCard";
 
 // Add your links here later
 const steamArtworks: { title: string; link: string }[] = [
@@ -85,7 +86,7 @@ const LinkCard = ({ title, link }: { title: string; link: string }) => (
     href={link}
     target="_blank"
     rel="noopener noreferrer"
-    className="block rounded-lg border border-border/40 bg-card/60 p-4 font-body text-sm hover:border-primary/50 hover:bg-primary/5 transition-all"
+    className="block rounded-md border border-foreground/15 bg-background/25 p-4 font-body text-sm backdrop-blur-md transition-all hover:border-primary/70 hover:bg-primary/10"
   >
     {title}
   </a>
@@ -105,7 +106,7 @@ const MyWorkSection = () => {
         </motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="p-6 rounded-xl border border-border/40 bg-card/40 backdrop-blur-sm">
+          <TiltCard className="h-full p-6">
             <h3 className="font-display text-xl font-semibold mb-4 text-primary">Steam Artworks</h3>
             <div className="space-y-3">
               {steamArtworks.length === 0 ? (
@@ -114,9 +115,9 @@ const MyWorkSection = () => {
                 steamArtworks.map((a) => <LinkCard key={a.link} {...a} />)
               )}
             </div>
-          </div>
+          </TiltCard>
 
-          <div className="p-6 rounded-xl border border-border/40 bg-card/40 backdrop-blur-sm">
+          <TiltCard className="h-full p-6">
             <h3 className="font-display text-xl font-semibold mb-4 text-primary">TikTok Videos</h3>
             <div className="space-y-3">
               {tiktokVideos.length === 0 ? (
@@ -125,7 +126,7 @@ const MyWorkSection = () => {
                 tiktokVideos.map((v) => <LinkCard key={v.link} {...v} />)
               )}
             </div>
-          </div>
+          </TiltCard>
         </div>
       </div>
     </section>

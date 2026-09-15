@@ -6,3 +6,4 @@
 - [x] Move existing products into `/shop`.
 - [x] Add Gang of Three and preserve the black/dark-red visual style.
 - [x] Verify desktop and mobile routes, links, media attributes, and automated tests.
+- [x] Add the floral background, glass cards, cursor tilt, animated borders, Spotify logo, and refined TEI wordmark.

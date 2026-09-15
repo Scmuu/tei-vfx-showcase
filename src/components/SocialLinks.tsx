@@ -1,8 +1,12 @@
-import { Music2 } from "lucide-react";
-
 const TikTokIcon = () => (
   <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5" aria-hidden="true">
     <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 1 1-2.09-3.18v-3.5a6.34 6.34 0 1 0 5.47 6.21V8.87a8.28 8.28 0 0 0 4.76 1.5v-3.4c-.32 0-.63-.1-.92-.28Z" />
+  </svg>
+);
+
+const SpotifyIcon = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5" aria-hidden="true">
+    <path d="M12 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24Zm5.5 17.3a.75.75 0 0 1-1.03.25c-2.83-1.73-6.4-2.12-10.6-1.16a.75.75 0 1 1-.34-1.46c4.6-1.05 8.55-.6 11.72 1.34.36.21.47.68.25 1.03Zm1.47-3.26a.94.94 0 0 1-1.29.31c-3.24-1.99-8.18-2.56-12.01-1.4a.94.94 0 1 1-.55-1.8c4.38-1.32 9.82-.68 13.54 1.6.44.27.58.85.31 1.29Zm.13-3.4C15.22 8.33 8.82 8.1 5.12 9.22a1.13 1.13 0 1 1-.65-2.16c4.25-1.29 11.32-1.02 15.78 1.63a1.13 1.13 0 0 1-1.15 1.95Z" />
   </svg>
 );
 
@@ -20,7 +24,7 @@ const SteamIcon = () => (
 
 const socials = [
   { name: "TikTok", href: "https://tiktok.com/@tei_7oo?is_from_webapp=1&sender_device=pc", icon: <TikTokIcon /> },
-  { name: "Spotify", href: "https://open.spotify.com/playlist/68oCcKSxWsYcPpJTQGipAG?si=2x_W9zBGQlKOEyySnN3zAA&pi=MRCRzTbdSVC35", icon: <Music2 className="h-5 w-5" /> },
+  { name: "Spotify", href: "https://open.spotify.com/playlist/68oCcKSxWsYcPpJTQGipAG?si=2x_W9zBGQlKOEyySnN3zAA&pi=MRCRzTbdSVC35", icon: <SpotifyIcon /> },
   { name: "Steam", href: "https://steamcommunity.com/id/Tei_rl/", icon: <SteamIcon /> },
   { name: "Discord", href: "https://discord.gg/2ma6rC7kPt", icon: <DiscordIcon /> },
 ];
