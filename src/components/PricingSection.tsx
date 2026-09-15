@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import TiltCard from "@/components/TiltCard";
 
 const pricingTiers = [
   {
@@ -38,13 +39,13 @@ const PricingSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {pricingTiers.map((tier, i) => (
-            <motion.div
-              key={tier.name}
+            <TiltCard key={tier.name} className="h-full">
+              <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.12 }}
-              className="relative flex flex-col p-8 rounded-xl border border-border/40 bg-card/60 backdrop-blur-sm hover:border-primary/30 transition-all duration-500"
+              className="flex h-full flex-col p-8"
             >
               <h3 className="font-display text-xl font-semibold mb-1">{tier.name}</h3>
               {tier.subtitle && (
@@ -69,7 +70,8 @@ const PricingSection = () => {
               >
                 Order Now
               </a>
-            </motion.div>
+              </motion.div>
+            </TiltCard>
           ))}
         </div>
       </div>
