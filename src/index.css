@@ -4,7 +4,8 @@
 
 @font-face {
   font-family: 'Gang of Three';
-  src: url('/__l5e/assets-v1/ae7fedf7-c308-46b4-baac-2c78f529ee04/gang-of-three.ttf') format('truetype');
+  src: url('/noto-sans-jp-light.ttf') format('truetype');
+  font-weight: 300;
   font-display: swap;
 }
 
@@ -68,7 +69,8 @@
 
 @layer utilities {
   .font-display {
-    font-family: 'Gang of Three', Impact, sans-serif;
+    font-family: 'Gang of Three', 'Arial Narrow', sans-serif;
+    font-weight: 300;
   }
   .font-body {
     font-family: 'Trebuchet MS', Arial, sans-serif;
