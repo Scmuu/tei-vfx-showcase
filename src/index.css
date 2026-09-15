@@ -100,6 +100,55 @@
       0 0 30px hsl(var(--glow-accent) / 0.15);
   }
 
+  .energy-card {
+    --tilt-x: 0deg;
+    --tilt-y: 0deg;
+    --light-x: 50%;
+    --light-y: 50%;
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    border: 1px solid transparent;
+    border-radius: var(--radius);
+    background:
+      linear-gradient(hsl(var(--card) / 0.5), hsl(var(--card) / 0.5)) padding-box,
+      conic-gradient(from var(--energy-angle), transparent 15%, hsl(var(--primary)), hsl(var(--foreground) / 0.8), transparent 55%) border-box;
+    box-shadow: 0 16px 45px hsl(var(--background) / 0.5), inset 0 1px 0 hsl(var(--foreground) / 0.12);
+    backdrop-filter: blur(18px) saturate(135%);
+    transform: perspective(900px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y));
+    transform-style: preserve-3d;
+    transition: transform 160ms ease-out, box-shadow 300ms ease;
+    animation: energy-border 4s linear infinite;
+  }
+
+  .energy-card:hover {
+    box-shadow: 0 22px 60px hsl(var(--background) / 0.65), 0 0 24px hsl(var(--primary) / 0.3);
+  }
+
+  .energy-card__light {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at var(--light-x) var(--light-y), hsl(var(--foreground) / 0.16), transparent 38%);
+    pointer-events: none;
+  }
+
+}
+
+@property --energy-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes energy-border {
+  to { --energy-angle: 360deg; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .energy-card {
+    animation: none;
+    transform: none !important;
+  }
 }
 /* Nascondi Lovable embed/badge */
 [class*="lovable"],
