@@ -9,6 +9,13 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Chinese Brush';
+  src: url('/chinese-brush.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+
 @layer base {
   :root {
     --background: 0 0% 0%;
