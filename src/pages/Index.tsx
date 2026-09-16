@@ -1,4 +1,5 @@
 import CursorTrail from "@/components/CursorTrail";
+import TiltCard from "@/components/TiltCard";
 import SocialLinks from "@/components/SocialLinks";
 import backgroundVideo from "@/assets/background.mp4.asset.json";
 import { motion } from "framer-motion";
