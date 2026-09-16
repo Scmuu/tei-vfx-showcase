@@ -26,19 +26,23 @@ const Index = () => {
           transition={{ duration: 0.7 }}
           className="flex max-w-3xl flex-col items-center"
         >
-          <h1 className="font-display text-7xl font-normal text-foreground sm:text-8xl md:text-9xl">TEI</h1>
+          <div className="mb-10 grid w-full max-w-xl grid-cols-1 gap-4 sm:grid-cols-2">
+            <Link to="/portfolio">
+              <TiltCard className="px-8 py-4 text-center font-body text-base font-semibold uppercase tracking-[0.2em] text-foreground transition-colors hover:text-primary">
+                Portfolio
+              </TiltCard>
+            </Link>
+            <Link to="/shop">
+              <TiltCard className="px-8 py-4 text-center font-body text-base font-semibold uppercase tracking-[0.2em] text-foreground transition-colors hover:text-primary">
+                Shop
+              </TiltCard>
+            </Link>
+          </div>
+          <h1 className="font-brush text-7xl font-normal text-foreground sm:text-8xl md:text-9xl">TEI</h1>
           <p className="mt-5 max-w-2xl font-body text-lg font-medium leading-relaxed text-foreground/85 md:text-xl">
             VFX / SMM &amp; Video Editor specializing in <span className="text-primary">Rocket League</span>.
             <br />SMM Lead for Kurai &amp; SMM for Freez.
           </p>
-          <div className="mt-10 grid w-full max-w-xl grid-cols-1 gap-4 sm:grid-cols-2">
-            <Link to="/portfolio" className="border border-primary bg-primary px-8 py-4 font-display text-lg text-primary-foreground shadow-glow transition-transform duration-300 hover:-translate-y-1">
-              Portfolio
-            </Link>
-            <Link to="/shop" className="border border-foreground/50 bg-background/40 px-8 py-4 font-display text-lg text-foreground backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-primary hover:text-primary">
-              Shop
-            </Link>
-          </div>
         </motion.div>
         <div className="absolute inset-x-0 bottom-7">
           <SocialLinks />
