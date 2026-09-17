@@ -66,16 +66,34 @@ const MusicPlayer = () => {
   };
 
   return (
-    <div className="relative mx-auto w-full max-w-sm">
-      <img
-        src="/player-art.png"
-        alt=""
-        aria-hidden="true"
-        className="pointer-events-none absolute -top-12 left-4 z-10 h-16 w-auto select-none drop-shadow-[0_6px_16px_hsl(var(--background)/0.8)]"
-      />
+    <div className="relative mx-auto w-full max-w-3xl">
+      <div className="relative flex items-center gap-4 font-body text-sm tabular-nums text-foreground/70">
+        <img
+          src="/player-art.png"
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none absolute bottom-2 left-[7.5rem] z-10 h-9 w-auto select-none drop-shadow-[0_6px_16px_hsl(var(--background)/0.8)]"
+        />
 
-      <div className="flex items-center gap-3 font-body text-[11px] tabular-nums text-foreground/70">
-        <span className="w-8 shrink-0">{format(progress)}</span>
+        <div className="flex shrink-0 items-center gap-2 text-foreground/70">
+          <Volume2 className="h-4 w-4" />
+          <input
+            type="range"
+            min={0}
+            max={1}
+            step={0.01}
+            value={volume}
+            onChange={(event) => {
+              const next = Number(event.target.value);
+              setVolume(next);
+              if (audioRef.current) audioRef.current.volume = next;
+            }}
+            aria-label="Volume"
+            className="h-1 w-24 cursor-pointer appearance-none rounded-full bg-foreground/20 accent-primary"
+          />
+        </div>
+
+        <span className="w-12 shrink-0">{format(progress)}</span>
 
         <div
           role="slider"
@@ -100,16 +118,16 @@ const MusicPlayer = () => {
           />
         </div>
 
-        <span className="w-8 shrink-0 text-right">{format(duration)}</span>
+        <span className="w-12 shrink-0 text-right">{format(duration)}</span>
 
-        <div className="flex shrink-0 items-center gap-1.5 text-foreground/80">
+        <div className="flex shrink-0 items-center gap-2.5 text-foreground/80">
           <button
             type="button"
             onClick={restart}
             aria-label="Restart music"
             className="transition-colors hover:text-foreground"
           >
-            <SkipBack className="h-3.5 w-3.5" fill="currentColor" />
+            <SkipBack className="h-5 w-5" fill="currentColor" />
           </button>
 
           <button
@@ -119,9 +137,9 @@ const MusicPlayer = () => {
             className="transition-colors hover:text-foreground"
           >
             {playing ? (
-              <Pause className="h-4 w-4" fill="currentColor" />
+              <Pause className="h-6 w-6" fill="currentColor" />
             ) : (
-              <Play className="h-4 w-4" fill="currentColor" />
+              <Play className="h-6 w-6" fill="currentColor" />
             )}
           </button>
 
@@ -131,27 +149,9 @@ const MusicPlayer = () => {
             aria-label="Restart music"
             className="transition-colors hover:text-foreground"
           >
-            <SkipForward className="h-3.5 w-3.5" fill="currentColor" />
+            <SkipForward className="h-5 w-5" fill="currentColor" />
           </button>
         </div>
-      </div>
-
-      <div className="mt-2 flex items-center justify-center gap-2 opacity-60 transition-opacity hover:opacity-100">
-        <Volume2 className="h-3 w-3 text-foreground/60" />
-        <input
-          type="range"
-          min={0}
-          max={1}
-          step={0.01}
-          value={volume}
-          onChange={(event) => {
-            const next = Number(event.target.value);
-            setVolume(next);
-            if (audioRef.current) audioRef.current.volume = next;
-          }}
-          aria-label="Volume"
-          className="h-1 w-20 cursor-pointer appearance-none rounded-full bg-foreground/20 accent-primary"
-        />
       </div>
 
       <audio
