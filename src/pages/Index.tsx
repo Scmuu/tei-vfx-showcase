@@ -1,4 +1,5 @@
 import CursorTrail from "@/components/CursorTrail";
+import MusicPlayer from "@/components/MusicPlayer";
 import TiltCard from "@/components/TiltCard";
 import SocialLinks from "@/components/SocialLinks";
 import { motion } from "framer-motion";
