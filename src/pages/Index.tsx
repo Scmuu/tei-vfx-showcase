@@ -57,7 +57,7 @@ const Index = () => {
             </Link>
           </div>
 
-          <div className="mt-16 w-full">
+          <div className="mt-24 w-full">
             <MusicPlayer />
           </div>
         </motion.div>
