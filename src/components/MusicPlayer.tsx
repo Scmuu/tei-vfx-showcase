@@ -72,7 +72,7 @@ const MusicPlayer = () => {
           src="/player-art.png"
           alt=""
           aria-hidden="true"
-          className="pointer-events-none absolute bottom-2 left-[7.5rem] z-10 h-9 w-auto select-none drop-shadow-[0_6px_16px_hsl(var(--background)/0.8)]"
+          className="pointer-events-none absolute bottom-1 left-[12.75rem] z-10 h-9 w-auto select-none drop-shadow-[0_6px_16px_hsl(var(--background)/0.8)]"
         />
 
         <div className="flex shrink-0 items-center gap-2 text-foreground/70">
