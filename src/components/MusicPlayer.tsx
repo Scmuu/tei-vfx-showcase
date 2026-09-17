@@ -1,4 +1,4 @@
-import { Pause, Play, Volume2 } from "lucide-react";
+import { Pause, Play, SkipBack, SkipForward, Volume2 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 const MusicPlayer = () => {
@@ -43,11 +43,26 @@ const MusicPlayer = () => {
     }
   };
 
+  const restart = () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    audio.currentTime = 0;
+  };
+
   const format = (value: number) => {
     if (!Number.isFinite(value)) return "0:00";
     const m = Math.floor(value / 60);
     const s = Math.floor(value % 60);
     return `${m}:${s.toString().padStart(2, "0")}`;
+  };
+
+  const seek = (event: React.MouseEvent<HTMLDivElement>) => {
+    const audio = audioRef.current;
+    if (!audio || !Number.isFinite(duration) || duration <= 0) return;
+    const rect = event.currentTarget.getBoundingClientRect();
+    const ratio = Math.min(1, Math.max(0, (event.clientX - rect.left) / rect.width));
+    audio.currentTime = ratio * duration;
+    setProgress(audio.currentTime);
   };
 
   return (
@@ -56,58 +71,87 @@ const MusicPlayer = () => {
         src="/player-art.png"
         alt=""
         aria-hidden="true"
-        className="pointer-events-none absolute -top-16 left-0 z-10 h-24 w-auto select-none drop-shadow-[0_8px_20px_hsl(var(--background)/0.8)]"
+        className="pointer-events-none absolute -top-12 left-4 z-10 h-16 w-auto select-none drop-shadow-[0_6px_16px_hsl(var(--background)/0.8)]"
       />
 
-      <div className="relative rounded-2xl border border-foreground/15 bg-background/40 px-4 py-3 backdrop-blur-md">
-        <input
-          type="range"
-          min={0}
-          max={duration || 0}
-          step={0.1}
-          value={progress}
-          onChange={(event) => {
+      <div className="flex items-center gap-3 font-body text-[11px] tabular-nums text-foreground/70">
+        <span className="w-8 shrink-0">{format(progress)}</span>
+
+        <div
+          role="slider"
+          aria-label="Music progress"
+          aria-valuemin={0}
+          aria-valuemax={Math.round(duration) || 0}
+          aria-valuenow={Math.round(progress)}
+          tabIndex={0}
+          onClick={seek}
+          onKeyDown={(event) => {
             const audio = audioRef.current;
             if (!audio) return;
-            audio.currentTime = Number(event.target.value);
-            setProgress(Number(event.target.value));
+            if (event.key === "ArrowRight") audio.currentTime = Math.min(duration, audio.currentTime + 5);
+            if (event.key === "ArrowLeft") audio.currentTime = Math.max(0, audio.currentTime - 5);
           }}
-          aria-label="Music progress"
-          className="h-1 w-full cursor-pointer appearance-none rounded-full bg-foreground/20 accent-primary"
-        />
+          className="group relative h-4 flex-1 cursor-pointer"
+        >
+          <div className="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 rounded-full bg-foreground/25" />
+          <div
+            className="absolute left-0 top-1/2 h-px -translate-y-1/2 rounded-full bg-foreground/80"
+            style={{ width: `${duration > 0 ? (progress / duration) * 100 : 0}%` }}
+          />
+        </div>
 
-        <div className="mt-2 flex items-center justify-between gap-3 font-body text-[11px] tabular-nums text-foreground/70">
-          <span>{format(progress)}</span>
+        <span className="w-8 shrink-0 text-right">{format(duration)}</span>
+
+        <div className="flex shrink-0 items-center gap-1.5 text-foreground/80">
+          <button
+            type="button"
+            onClick={restart}
+            aria-label="Restart music"
+            className="transition-colors hover:text-foreground"
+          >
+            <SkipBack className="h-3.5 w-3.5" fill="currentColor" />
+          </button>
 
           <button
             type="button"
             onClick={toggle}
             aria-label={playing ? "Pause music" : "Play music"}
-            className="grid h-9 w-9 place-items-center rounded-full border border-foreground/25 bg-background/60 text-foreground transition-colors hover:border-primary hover:text-primary"
+            className="transition-colors hover:text-foreground"
           >
-            {playing ? <Pause className="h-4 w-4" /> : <Play className="h-4 w-4" />}
+            {playing ? (
+              <Pause className="h-4 w-4" fill="currentColor" />
+            ) : (
+              <Play className="h-4 w-4" fill="currentColor" />
+            )}
           </button>
 
-          <span>{format(duration)}</span>
+          <button
+            type="button"
+            onClick={restart}
+            aria-label="Restart music"
+            className="transition-colors hover:text-foreground"
+          >
+            <SkipForward className="h-3.5 w-3.5" fill="currentColor" />
+          </button>
         </div>
+      </div>
 
-        <div className="mt-2 flex items-center justify-center gap-2">
-          <Volume2 className="h-3.5 w-3.5 text-foreground/60" />
-          <input
-            type="range"
-            min={0}
-            max={1}
-            step={0.01}
-            value={volume}
-            onChange={(event) => {
-              const next = Number(event.target.value);
-              setVolume(next);
-              if (audioRef.current) audioRef.current.volume = next;
-            }}
-            aria-label="Volume"
-            className="h-1 w-24 cursor-pointer appearance-none rounded-full bg-foreground/20 accent-primary"
-          />
-        </div>
+      <div className="mt-2 flex items-center justify-center gap-2 opacity-60 transition-opacity hover:opacity-100">
+        <Volume2 className="h-3 w-3 text-foreground/60" />
+        <input
+          type="range"
+          min={0}
+          max={1}
+          step={0.01}
+          value={volume}
+          onChange={(event) => {
+            const next = Number(event.target.value);
+            setVolume(next);
+            if (audioRef.current) audioRef.current.volume = next;
+          }}
+          aria-label="Volume"
+          className="h-1 w-20 cursor-pointer appearance-none rounded-full bg-foreground/20 accent-primary"
+        />
       </div>
 
       <audio
