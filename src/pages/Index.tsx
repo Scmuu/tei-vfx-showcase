@@ -1,5 +1,4 @@
 import CursorTrail from "@/components/CursorTrail";
-import MusicPlayer from "@/components/MusicPlayer";
 import TiltCard from "@/components/TiltCard";
 import SocialLinks from "@/components/SocialLinks";
 import { motion } from "framer-motion";
@@ -57,9 +56,6 @@ const Index = () => {
             </Link>
           </div>
 
-          <div className="mt-24 w-full">
-            <MusicPlayer />
-          </div>
         </motion.div>
 
         <div className="absolute inset-x-0 bottom-7">
