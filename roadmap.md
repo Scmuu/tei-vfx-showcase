@@ -8,3 +8,4 @@
 - [x] Verify desktop and mobile routes, links, media attributes, and automated tests.
 - [x] Add the floral background, glass cards, cursor tilt, animated borders, Spotify logo, and refined TEI wordmark.
 - [x] Match the Freezie-style glass cards with responsive 3D movement and cursor-following reflection.
+- [x] Remove the music and player bar from the home page.
