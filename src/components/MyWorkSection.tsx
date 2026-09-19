@@ -75,6 +75,13 @@ const tiktokVideos: { title: string; link: string }[] = [
   },
 ];
 
+const youtubeVideos: { title: string; link: string }[] = [
+  {
+    title: "Kurai Moments 1",
+    link: "https://youtu.be/vnxzG1RLGl0",
+  },
+];
+
 const Placeholder = ({ label }: { label: string }) => (
   <div className="rounded-lg border border-dashed border-border/50 bg-card/40 p-6 text-center font-body text-sm text-muted-foreground">
     {label} — links coming soon
@@ -95,7 +102,7 @@ const LinkCard = ({ title, link }: { title: string; link: string }) => (
 const MyWorkSection = () => {
   return (
     <section id="mywork" className="relative py-32 px-4">
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -105,7 +112,7 @@ const MyWorkSection = () => {
           My <span className="text-primary">Work</span>
         </motion.h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
           <TiltCard className="h-full p-6">
             <h3 className="font-display text-xl font-semibold mb-4 text-primary">Steam Artworks</h3>
             <div className="space-y-3">
@@ -125,6 +132,13 @@ const MyWorkSection = () => {
               ) : (
                 tiktokVideos.map((v) => <LinkCard key={v.link} {...v} />)
               )}
+            </div>
+          </TiltCard>
+
+          <TiltCard className="h-full p-6 md:col-span-2 xl:col-span-1">
+            <h3 className="font-display text-xl font-semibold mb-4 text-primary">YouTube Videos</h3>
+            <div className="space-y-3">
+              {youtubeVideos.map((video) => <LinkCard key={video.link} {...video} />)}
             </div>
           </TiltCard>
         </div>

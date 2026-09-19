@@ -28,7 +28,7 @@ const socials = [
   {
     name: "TikTok",
     icon: <TikTokIcon />,
-    link: "https://tiktok.com/@tei_7oo?is_from_webapp=1&sender_device=pc",
+    link: "https://tiktok.com/@tei.ffx",
     desc: "Follow me for clips and highlights",
   },
   {
