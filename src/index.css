@@ -96,9 +96,13 @@
 
   .font-lemon,
   .font-lemon .font-body,
-  .font-lemon .font-display,
-  .font-lemon .font-brush {
+  .font-lemon .font-display {
     font-family: 'Lemon Milk', 'Arial Narrow', sans-serif;
+    font-weight: 400;
+  }
+
+  .font-lemon .font-brush {
+    font-family: 'Chinese Brush', 'Gang of Three', serif;
     font-weight: 400;
   }
 
