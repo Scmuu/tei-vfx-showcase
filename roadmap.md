@@ -10,3 +10,4 @@
 - [x] Match the Freezie-style glass cards with responsive 3D movement and cursor-following reflection.
 - [x] Remove the music and player bar from the home page.
 - [x] Update the TikTok social link, add YouTube work, and use the animated petals background on Portfolio and Shop.
+- [x] Apply Lemon Milk to Portfolio and Shop and remove the Shop subtitle.

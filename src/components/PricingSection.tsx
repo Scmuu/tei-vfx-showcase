@@ -28,16 +28,7 @@ const PricingSection = () => {
         >
           <span className="text-primary">Shop</span>
         </motion.h2>
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="text-center text-muted-foreground font-body mb-16 text-lg"
-        >
-          Choose what you need — starting from €5
-        </motion.p>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-6">
           {pricingTiers.map((tier, i) => (
             <TiltCard key={tier.name} className="h-full">
               <motion.div
