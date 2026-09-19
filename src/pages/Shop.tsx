@@ -4,7 +4,7 @@ import PetalFall from "@/components/PetalFall";
 import PricingSection from "@/components/PricingSection";
 
 const Shop = () => (
-  <div className="relative min-h-screen overflow-hidden bg-background">
+  <div className="font-lemon relative min-h-screen overflow-hidden bg-background">
     <PetalFall />
     <CursorTrail />
     <InternalHeader />

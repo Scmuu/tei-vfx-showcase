@@ -4,7 +4,7 @@ import MyWorkSection from "@/components/MyWorkSection";
 import PetalFall from "@/components/PetalFall";
 
 const Portfolio = () => (
-  <div className="relative min-h-screen overflow-hidden bg-background">
+  <div className="font-lemon relative min-h-screen overflow-hidden bg-background">
     <PetalFall />
     <CursorTrail />
     <InternalHeader />

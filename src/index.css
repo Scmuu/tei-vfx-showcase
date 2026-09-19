@@ -16,6 +16,13 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Lemon Milk';
+  src: url('/__l5e/assets-v1/3a705bdc-2dbb-491a-92b7-4d7b0f5f5055/LEMONMILK-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-display: swap;
+}
+
 @layer base {
   :root {
     --background: 0 0% 0%;
@@ -85,6 +92,14 @@
   }
   .font-body {
     font-family: 'Trebuchet MS', Arial, sans-serif;
+  }
+
+  .font-lemon,
+  .font-lemon .font-body,
+  .font-lemon .font-display,
+  .font-lemon .font-brush {
+    font-family: 'Lemon Milk', 'Arial Narrow', sans-serif;
+    font-weight: 400;
   }
 
   .petal-fall {
