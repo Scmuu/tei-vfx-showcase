@@ -23,7 +23,7 @@ const SteamIcon = () => (
 );
 
 const socials = [
-  { name: "TikTok", href: "https://tiktok.com/@tei_7oo?is_from_webapp=1&sender_device=pc", icon: <TikTokIcon /> },
+  { name: "TikTok", href: "https://tiktok.com/@tei.ffx", icon: <TikTokIcon /> },
   { name: "Spotify", href: "https://open.spotify.com/playlist/68oCcKSxWsYcPpJTQGipAG?si=2x_W9zBGQlKOEyySnN3zAA&pi=MRCRzTbdSVC35", icon: <SpotifyIcon /> },
   { name: "Steam", href: "https://steamcommunity.com/id/Tei_rl/", icon: <SteamIcon /> },
   { name: "Discord", href: "https://discord.gg/2ma6rC7kPt", icon: <DiscordIcon /> },
