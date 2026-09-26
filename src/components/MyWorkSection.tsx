@@ -62,6 +62,10 @@ const tiktokVideos: { title: string; link: string }[] = [
     link: "https://www.tiktok.com/@team_kurai/video/7634166471358352663?is_from_webapp=1&sender_device=pc",
   },
   {
+    title: "Team Kurai Video 2",
+    link: "https://www.tiktok.com/@team_kurai/video/7689824561361145110",
+  },
+  {
     title: "Team Raiko Video",
     link: "https://vm.tiktok.com/ZNRcsnX1x/",
   },
