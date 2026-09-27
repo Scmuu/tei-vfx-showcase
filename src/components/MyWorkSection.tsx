@@ -24,14 +24,39 @@ const steamArtworks: { title: string; link: string }[] = [
     link: "https://steamcommunity.com/id/teiiii_/",
   },
 ];
+// Ordered by publication date, newest first (TikTok video IDs are sequential)
 const tiktokVideos: { title: string; link: string }[] = [
   {
-    title: "Dip Video",
-    link: "https://www.tiktok.com/@il_dip/video/7631189991858752790?is_from_webapp=1&sender_device=pc",
+    title: "Team Kurai Video 2",
+    link: "https://www.tiktok.com/@team_kurai/video/7689824561361145110",
+  },
+  {
+    title: "Team Freez Video",
+    link: "https://www.tiktok.com/@teamfreezrl/video/7665757401210965270?is_from_webapp=1&sender_device=pc",
   },
   {
     title: "Dip Video 2",
     link: "https://vm.tiktok.com/ZNRcso7FU/",
+  },
+  {
+    title: "Freezie Video 3",
+    link: "https://vm.tiktok.com/ZNRcG1FT7/",
+  },
+  {
+    title: "Team Kurai Video",
+    link: "https://vm.tiktok.com/ZNRcsnX1x/",
+  },
+  {
+    title: "Team Raiko Video",
+    link: "https://vm.tiktok.com/ZNRcsnX1x/",
+  },
+  {
+    title: "Zoft Video 1",
+    link: "https://www.tiktok.com/@zoftrl/video/7643815609632902421?is_from_webapp=1&sender_device=pc",
+  },
+  {
+    title: "Dip Video",
+    link: "https://www.tiktok.com/@il_dip/video/7631189991858752790?is_from_webapp=1&sender_device=pc",
   },
   {
     title: "Freezie Video 1",
@@ -42,36 +67,12 @@ const tiktokVideos: { title: string; link: string }[] = [
     link: "https://www.tiktok.com/@freezie.rl/video/7615747326262529302?is_from_webapp=1&sender_device=pc",
   },
   {
-    title: "Freezie Video 3",
-    link: "https://vm.tiktok.com/ZNRcG1FT7/",
-  },
-  {
-    title: "Kikko Video",
-    link: "https://www.tiktok.com/@kikkorl34/video/7613152506335546646?is_from_webapp=1&sender_device=pc",
-  },
-  {
     title: "Team Exyr Video",
     link: "https://www.tiktok.com/@team_exyr/video/7615323788502191382?is_from_webapp=1&sender_device=pc",
   },
   {
-    title: "Team Freez Video",
-    link: "https://www.tiktok.com/@teamfreezrl/video/7665757401210965270?is_from_webapp=1&sender_device=pc",
-  },
-  {
-    title: "Team Kurai Video",
-    link: "https://www.tiktok.com/@team_kurai/video/7634166471358352663?is_from_webapp=1&sender_device=pc",
-  },
-  {
-    title: "Team Kurai Video 2",
-    link: "https://www.tiktok.com/@team_kurai/video/7689824561361145110",
-  },
-  {
-    title: "Team Raiko Video",
-    link: "https://vm.tiktok.com/ZNRcsnX1x/",
-  },
-  {
-    title: "Zoft Video 1",
-    link: "https://www.tiktok.com/@zoftrl/video/7643815609632902421?is_from_webapp=1&sender_device=pc",
+    title: "Kikko Video",
+    link: "https://www.tiktok.com/@kikkorl34/video/7613152506335546646?is_from_webapp=1&sender_device=pc",
   },
   {
     title: "Zoft Video 2",
