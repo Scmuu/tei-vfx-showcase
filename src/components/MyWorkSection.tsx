@@ -27,6 +27,10 @@ const steamArtworks: { title: string; link: string }[] = [
 // Ordered by publication date, newest first (TikTok video IDs are sequential)
 const tiktokVideos: { title: string; link: string }[] = [
   {
+    title: "Team Freez Video 3",
+    link: "https://www.tiktok.com/@teamfreezrl/video/7700673469985459478",
+  },
+  {
     title: "Team Freez Video 2",
     link: "https://www.tiktok.com/@teamfreezrl/video/7695418805165493526",
   },
